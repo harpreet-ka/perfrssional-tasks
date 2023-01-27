@@ -59,4 +59,4 @@ After that create task definition and task service
  during this project 
  
  WE FACE THAT ERROR UNABLE TO LOAD THE PAGE AND VIA TROUBLESHOOT FOUND THAT WE NEED TO PUT THE ENVIRONMENT VARIABLE BUT THAT'S NOT WORKING AND AFTER THAT I WAS CHECK THE LOGS USING FOLLOWING COMMAND   also need to p;ut one more variable 
-https://docs.growthbook.io/self-host/config#domains-and-ports  .
+![alt](https://docs.growthbook.io/self-host/config#domains-and-ports_) .

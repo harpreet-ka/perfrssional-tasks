@@ -1,0 +1,62 @@
+Growth book task
+
+what is growthbook? 
+
+GrowthBook is a modular platform. You can use it for either Feature Flags, Experiment Analysis, or both.
+
+Steps 
+how to solve growthbook that all are listed below one by one. thathelps to solve the growthbook task.
+ 
+1.Firstly step is we have need to build cluster 
+2.Choose (ec2 linux) networking.
+3.Choose vpc and  subnet . you also go with the default option (create new)
+4.Enable auto assign ip
+5.Choose security group  
+
+
+Now the next step is  we have need to understand our task what is our task :
+
+Task is to run a growth book on ecs .
+
+How i was complete that task using following  steps 
+First we know that we need to build ecs cluster and cluster is la;iunch ec2  ssh in that ec2 and install the following tools.
+    1  sudo install git 
+    2  sudo yum  install git 
+    3  sudo yum update -y
+    4  sudo yum install docker
+
+We have a link to a growth book . next step 
+That is  https://github.com/growthbook/growthbook (growth book git template )
+
+git clone <repo name>
+
+Docker compose up -d (run in the background )
+
+After that create private repo on ecr (elastic compute registry)
+
+That is the same as docker hub but the docker hub is a private tool and ECR is a personal tool of aws .
+Now config your aws { aws configure }
+Aws config command have need of iam user with administrator access.
+
+Now the next step is to push the docker  file in ecr .
+
+We can see that commands in view push commands .
+Run that commands 
+
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 508147359193.dkr.ecr.us-east-2.amazonaws.com
+
+Skip the docker build command because we already compose that files 
+
+Next command is 
+
+docker tag mongo:latest 508147359193.dkr.ecr.us-east-2.amazonaws.com/mongo:latest
+
+docker push 508147359193.dkr.ecr.us-east-2.amazonaws.com/mongo:latest
+
+After that create task definition and task service 
+
+ ERROR! ERROR! ERROR!
+ during this project 
+ 
+ WE FACE THAT ERROR UNABLE TO LOAD THE PAGE AND VIA TROUBLESHOOT FOUND THAT WE NEED TO PUT THE ENVIRONMENT VARIABLE BUT THAT'S NOT WORKING AND AFTER THAT I WAS CHECK THE LOGS USING FOLLOWING COMMAND   also need to p;ut one more variable 
+https://docs.growthbook.io/self-host/config#domains-and-ports  .
